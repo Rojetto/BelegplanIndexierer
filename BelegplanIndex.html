@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Belegplan Index</title>
+<style type="text/css">
+@import "BelegplanDateien/css/jquery.dataTables.css";
+</style>
+<script type="text/javascript" src="BelegplanDateien/js/jquery.js"></script>
+<script type="text/javascript" src="BelegplanDateien/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#belegplaene').dataTable({
+		"oLanguage": {
+			"sLengthMenu": "Zeige _MENU_ Eintr\u00E4ge pro Seite",
+			"sZeroRecords": "Keine Eintr\u00E4ge gefunden",
+			"sInfo": "Zeige _START_ bis _END_ von insgesamt _TOTAL_ Eintr\u00E4gen",
+			"sInfoEmpty": "Zeige 0 Eintr\u00E4ge",
+			"sInfoFiltered": "(aus _MAX_ Eintr\u00E4gen gefiltert)",
+			"sSearch": "Suchen",
+			"oPaginate": {
+				"sFirst": "Erste",
+				"sLast": "Letzte",
+				"sNext": "N\u00E4chste",
+				"sPrevious": "Vorherige"
+			}
+		},
+    "aLengthMenu": [[15, -1], [15, "Alle"]],
+    "iDisplayLength": 15,
+    "sPaginationType": "full_numbers"
+	});
+});
+</script>
+</head>
+<body>
+	<h1>Belegplan Index</h1>
+	<table id="belegplaene">
+		<thead>
+			<tr>
+				<td>Sch&#252;ler</td>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<br><br>
+	<span style="font-size:60%">Belegplan-Index von Robert Heedt. Die Daten k&#246;nnen im JSON-Format <a href="BelegplanDateien/BelegplanDaten.json">hier</a> gefunden werden.</span>
+</body>
+</html>
