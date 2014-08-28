@@ -16,10 +16,10 @@ import org.jsoup.select.Elements;
 
 import com.google.gson.GsonBuilder;
 
-public class IndexerThread implements Runnable {
-	BelegplanIndexerFenster fenster;
+public class IndexiererThread implements Runnable {
+	BelegplanIndexiererFenster fenster;
 	
-	public IndexerThread(BelegplanIndexerFenster fenster) {
+	public IndexiererThread(BelegplanIndexiererFenster fenster) {
 		this.fenster = fenster;
 	}
 	
@@ -41,7 +41,7 @@ public class IndexerThread implements Runnable {
 		
 		try {
 			extractFolder("BelegplanDateien", fenster.getDestinationFile());
-			extractFile(BelegplanIndexer.INDEX_FILE_NAME, fenster.getDestinationFile());
+			extractFile(BelegplanIndexierer.INDEX_FILE_NAME, fenster.getDestinationFile());
 		} catch(URISyntaxException e) {
 			System.out.println("Datei konnte nicht entpackt werden.");
 			return false;
@@ -51,18 +51,18 @@ public class IndexerThread implements Runnable {
 		}
 		System.out.println("Dateien entpackt.");
 		
-		File dataDirectory = new File(fenster.getDestinationFile(), BelegplanIndexer.DATA_DIRECTORY_NAME);
+		File dataDirectory = new File(fenster.getDestinationFile(), BelegplanIndexierer.DATA_DIRECTORY_NAME);
 		
-		File belegplanFile = new File(fenster.getDestinationFile(), BelegplanIndexer.INDEX_FILE_NAME);
+		File belegplanFile = new File(fenster.getDestinationFile(), BelegplanIndexierer.INDEX_FILE_NAME);
 		System.out.println("Schreibe Belegplan in \"" + belegplanFile.getAbsolutePath() + "\"");
 		try {
-			createIndexFile(new File(fenster.getDestinationFile(), BelegplanIndexer.INDEX_FILE_NAME), belegplaene);
+			createIndexFile(new File(fenster.getDestinationFile(), BelegplanIndexierer.INDEX_FILE_NAME), belegplaene);
 		} catch(IOException e1) {
 			System.out.println("Belegplan Index konnte nicht geschrieben werden.");
 			return false;
 		}
 		
-		File belegplanJsonFile = new File(dataDirectory, BelegplanIndexer.DATA_FILE_NAME);
+		File belegplanJsonFile = new File(dataDirectory, BelegplanIndexierer.DATA_FILE_NAME);
 		System.out.println("Schreibe Belegplan-Daten in \"" + belegplanJsonFile.getAbsolutePath() + "\"");
 		
 		String belegplanJson = new GsonBuilder().setPrettyPrinting().create().toJson(belegplaene);
@@ -72,7 +72,7 @@ public class IndexerThread implements Runnable {
 			writer.write(belegplanJson);
 			writer.close();
 		} catch(IOException e) {
-			System.out.println(BelegplanIndexer.DATA_FILE_NAME + " konnte nicht geschrieben werden.");
+			System.out.println(BelegplanIndexierer.DATA_FILE_NAME + " konnte nicht geschrieben werden.");
 		}
 		
 		File belegplaeneDirectory = new File(dataDirectory, "Belegplaene");

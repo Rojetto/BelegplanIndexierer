@@ -17,12 +17,12 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class BelegplanIndexerFenster extends JFrame implements ActionListener {
+public class BelegplanIndexiererFenster extends JFrame implements ActionListener {
 	private static final long serialVersionUID = -7448075019740707535L;
 	public static final int WIDTH = 600;
 	public static final int HEIGHT = 345;
 	
-	private BelegplanIndexer indexer;
+	private BelegplanIndexierer indexer;
 	private JLabel sourceLabel;
 	private JTextField sourceField;
 	private JButton sourceButton;
@@ -36,8 +36,8 @@ public class BelegplanIndexerFenster extends JFrame implements ActionListener {
 	private JCheckBox schule;
 	private JCheckBox gueltig;
 	
-	public BelegplanIndexerFenster(BelegplanIndexer indexer) {
-		super("Belegplan Indexer");
+	public BelegplanIndexiererFenster(BelegplanIndexierer indexer) {
+		super("Belegplan-Indexierer");
 		this.indexer = indexer;
 		
 		try {
