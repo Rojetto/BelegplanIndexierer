@@ -203,6 +203,8 @@ public class IndexiererThread implements Runnable {
 				row.appendElement("td").text(plan.getGueltig());
 		}
 		
+		doc.html(doc.html().replaceAll("%DISPLAY_LENGTH%", "25"));
+		
 		FileWriter writer = new FileWriter(htmlFile);
 		writer.write(doc.html());
 		writer.close();
