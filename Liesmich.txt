@@ -1,0 +1,21 @@
+"Quelldatei" ist der Pfad zur Datei "AbiStundenplanEinzel.html", die alle
+Belegpläne des Jahrgangs hintereinander enthält.
+
+"Zielverzeichnis" ist das Verzeichnis, in das der erstellte
+"BelegplanIndex.html", sowie alle für die Webseite benötigten Dateien
+(im automatisch erstellten Verzeichnis "BelegplanDateien") entpackt werden sollen.
+
+"Tutor", "Schule" und "gültig ab" aktivieren oder deaktivieren die gleichnamigen
+Spalten im erstellen Belegplan-Index.
+
+"Einträge pro Seite" stellt ein, wie viele Schüler pro Seite im erstellten
+Belegplan-Index angezeigt werden sollen.
+
+Wenn alle Einstellungen getroffen wurden kann der Indexier-Vorgang mit "Indexieren"
+gestartet werden. Daraufhin werden alle Dateien im Zielverzeichnis erstellt
+und der Indexierer kann geschlossen werden. Ab jetzt ist der erstellte
+"BelegplanIndex.html" alleine lauffähig, der Indexierer wird nicht mehr benötigt.
+
+Wenn "BelegplanIndex.html" in ein anderes Verzeichnis, zum Beispiel auf einen
+anderen Computer kopiert wird, ist wichtig, dass sich der Ordner "BelegplanDateien"
+im selben Verzeichnis wie "BelegplanIndex.html" befindet.
